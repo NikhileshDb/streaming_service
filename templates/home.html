@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/3.2.1/shaka-player.compiled.js" integrity="sha512-RN//CLuAKJGN69Gbolsw4d7LAB7T1hd6NrhwLxZjUFDVu3wRBxe9TEsAI5i4m4R4A6hdi7V8oFThUHVbLEVsOg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <!-- Your application source: -->
+    <script src="{% static 'js/player.js' %}"></script>
+  </head>
+  <body>
+
+    <div class="flex space-x-48">
+      <!-- This is video player -->
+          <div class=" p-5">
+              <video id="video"
+              width="640"
+              poster=""
+              controls autoplay>
+            </video>
+          </div class="p-5">
+          <!-- This is form -->
+          <div class="h-100 w-4/12">
+            <form method="post">
+              {% csrf_token %}
+              {{form}}
+              <button type="submit">Submit</button>
+            </form>
+
+          </div>
+    </div>
+
+   
+
+
+  </body>
+</html>

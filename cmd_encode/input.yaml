@@ -1,0 +1,7 @@
+inputs:
+    # Name of the input file.
+    # This example can be downloaded from https://storage.googleapis.com/shaka-streamer-assets/sample-inputs/Sintel.2010.4k.mkv
+  - name: ocean.mkv
+    # The media type of the input. Can be audio or video.
+    media_type: video
+
