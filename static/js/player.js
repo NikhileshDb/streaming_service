@@ -1,6 +1,6 @@
 const manifestUri =
-    '../../media/encoded_files/this_is_dash.mpd';
-
+    '../../media/country1/dash.mpd';
+   
 function initApp() {
   // Install built-in polyfills to patch browser incompatibilities.
   shaka.polyfill.installAll();

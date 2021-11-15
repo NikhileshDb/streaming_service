@@ -1,14 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Configuration</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-    <input placeholder="name" />
+{% block content %}
+    <div class="container m-56">
+        <form method="post" action="{% url 'start_encoding'  %}">
+            {% csrf_token %}
+            <select name="settings" class="bg-blue-300 ">
+                {% for i in obj_settings %}
+                <option value="{{i.id}}" >{{i}}</option>
+                {% endfor %}
+            </select>
+            <input name />
+                <Button>Star Encoding</Button>
+        </form>
+    </div>
     
-</body>
-</html>
+    
+{% endblock %}

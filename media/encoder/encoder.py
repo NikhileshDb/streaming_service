@@ -10,7 +10,7 @@ def encode():
         output_location= '../encoded_files',
         input_config_dict= {
             'inputs': [
-                dict(name='../ocean.mkv', media_type='video'),
+                dict(name='../countryroad.mp4', media_type='video'),
                 dict(name='../countryroad.mp4', media_type='audio'),
             ]
             },
@@ -24,11 +24,10 @@ def encode():
             'segment_size': 10,
             'segment_per_file': True,
             'segment_folder': 'segments',
-            'dash_output': 'this_is_dash.mpd',
-            'hls_output': 'this_is_hls.m3u8',
+            'dash_output': '../encoded_files/dash.mpd',
+            'hls_output': '../encoded_files/for_android.m3u8',
         },
      use_hermetic= True,   
     )
 
 
-encode()

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <div class="container overflow-hidden">
+    <div class="m-40 w-1/2 bg-gray-200 flex flex-col items-center gap-2">
+        <div class="text-2xl text-center font-bold"> Encdor Settings</div>
+        <div>
+            <form class="" method="post"  action="{% url 'handle' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div>
+                    <label>Name :</label>
+                    <input name="setting_name"/>
+                </div>
+                <div class="mt-5">
+                    <label>Select Media :</label>
+                    <select name="videos" class="bg-blue-300 ">
+                        {% for i in obj %}
+                        <option value="{{i.id}}" >{{i}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="pt-5">
+                    <label>Output Folder Name :</label>
+                    <input name="output_folder" />
+                </div>
+                <div class="pt-5">
+                    <label>Media Type :</label>
+                    <select name="media_type" class="bg-blue-300">
+                        <option value="video">video</option>
+                    </select>
+                </div >
+                <div class="pt-5">
+                <Button class="bg-blue-400 shadow-lg w-24">Submit</Button>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+
+
+{% endblock %}
